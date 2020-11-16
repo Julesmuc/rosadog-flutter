@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:rosadog/widgets/dog/dogAddView.dart';
 import 'dart:math';
 
-import 'package:flutter/material.dart';
 import 'package:rosadog/widgets/mainAppBar.dart';
 import 'package:uuid/uuid.dart';
 
@@ -64,6 +65,29 @@ class _MainViewState extends State<MainView> {
     });
   }
 
+  List<Widget> buildChildren(BuildContext context) {
+    List<Widget> list =
+        dogs.map<Widget>((e) => DogItem(e, deleteEntry)).toList();
+    if (dogs.length < 3) {
+      list.add(InkWell(
+        onTap: () => Navigator.pushNamed(context, DogAddView.routeName),
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          elevation: 4,
+          margin: EdgeInsets.all(10),
+          child: Icon(
+            Icons.add,
+            color: Theme.of(context).accentColor,
+            size: 100,
+          ),
+        ),
+      ));
+    }
+    return list;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +100,7 @@ class _MainViewState extends State<MainView> {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
         ),
-        children: dogs.map((e) => DogItem(e, deleteEntry)).toList(),
+        children: buildChildren(context),
       ),
     );
   }

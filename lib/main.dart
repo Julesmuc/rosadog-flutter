@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rosadog/widgets/dog/dogAddView.dart';
 import 'package:rosadog/widgets/entries/entryList.dart';
 import 'package:rosadog/widgets/settingsView.dart';
 import 'package:rosadog/widgets/mainView.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         EntryList.routeName: (ctx) => EntryList(),
         EntryView.routeName: (ctx) => EntryView(),
         SettingsView.routeName: (ctx) => SettingsView(),
+        DogAddView.routeName: (ctx) => DogAddView(),
       },
     );
   }
