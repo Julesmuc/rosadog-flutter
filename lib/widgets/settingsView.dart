@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SettingsView extends StatefulWidget {
-  static final routeName = "/settings";
+  static const routeName = "/settings";
   SettingsView({Key key}) : super(key: key);
 
   @override

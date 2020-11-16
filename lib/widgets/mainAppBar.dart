@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:rosadog/widgets/settingsView.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class MainAppBar extends StatelessWidget implements PreferredSizeWidget {
   static const menuItems = [
-    {'name': 'Settings', 'route': '/settings'},
+    {'name': 'Settings', 'route': SettingsView.routeName},
     {'name': 'Sign Out', 'route': '/sign out'},
     {'name': 'Contact', 'route': 'https://www.rosadog.de/kontakt/'}
   ];

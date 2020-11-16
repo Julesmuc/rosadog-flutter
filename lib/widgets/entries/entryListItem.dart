@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rosadog/models/entry.dart';
+import 'package:rosadog/widgets/entries/entryView.dart';
 
 import '../../helper.dart';
 
@@ -14,7 +15,7 @@ class EntryListItem extends StatelessWidget {
   }) : super(key: key);
 
   void editEntry(BuildContext context) {
-    Navigator.of(context).pushNamed('/entryEdit', arguments: entry);
+    Navigator.of(context).pushNamed(EntryView.routeName, arguments: entry);
   }
 
   @override

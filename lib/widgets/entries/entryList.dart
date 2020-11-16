@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:rosadog/models/dog.dart';
 import 'package:rosadog/widgets/entries/entryListItem.dart';
@@ -15,7 +17,11 @@ class EntryList extends StatelessWidget {
     var entries = dog.entries;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Entries for ${dog.name}"),
+        toolbarHeight: 40,
+        title: Text(
+          "Entries for ${dog.name}",
+          style: TextStyle(fontSize: 15),
+        ),
       ),
       body: ListView.builder(
         itemBuilder: (context, i) {
@@ -27,6 +33,18 @@ class EntryList extends StatelessWidget {
           );
         },
         itemCount: entries.length == null ? 0 : entries.length,
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add),
+            label: "New entry",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.pets),
+            label: "About dog",
+          ),
+        ],
       ),
     );
   }

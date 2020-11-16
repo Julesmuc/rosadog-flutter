@@ -5,20 +5,20 @@ import 'dart:math';
 import 'package:rosadog/widgets/mainAppBar.dart';
 import 'package:uuid/uuid.dart';
 
-import '../models/entry.dart';
-import 'dog/dogItem.dart';
-import '../models/dog.dart';
-import '../helper.dart';
+import '../../models/entry.dart';
+import 'dogItem.dart';
+import '../../models/dog.dart';
+import '../../helper.dart';
 
-class MainView extends StatefulWidget {
+class DogListView extends StatefulWidget {
   static final routeName = "/dogs";
-  MainView({Key key}) : super(key: key);
+  DogListView({Key key}) : super(key: key);
 
   @override
-  _MainViewState createState() => _MainViewState();
+  _DogListViewState createState() => _DogListViewState();
 }
 
-class _MainViewState extends State<MainView> {
+class _DogListViewState extends State<DogListView> {
   static randomNumber(i) {
     final random = new Random();
     return random.nextInt(i);
